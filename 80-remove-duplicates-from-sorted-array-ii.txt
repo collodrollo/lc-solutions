@@ -1,0 +1,9 @@
+-obvious approach is to pop off every item whose count exceeds 2, but popping in the middle 
+ of array is O(N), making the algo O(N^2)
+-rotating each excessive element to the end of the array yields similar results
+-when faced with a situation like this, place a left pointer just after the final allowable
+ element and advance the right pointer until a new element is reached
+-replace element at left pointer with element from right pointer and advance both
+ until right pointer reaches end of the array
+-pop off all garbage elements at end of array
+-O(N)

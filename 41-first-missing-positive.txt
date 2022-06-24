@@ -1,0 +1,33 @@
+naive
+-sort array
+-THERE CAN BE REPEATS, so there is not a unique
+ number assigned to every index
+-find the index at which 1 would exist (the first
+ positive number)
+-if that is outside the array or the value at that
+ index is not 1, return 1
+-otherwise, iterate until the next value in the array
+ is 2 or more greater than the current value
+-if no such value exists, the solution is the final 
+ value in the array + 1
+-O(N * log(N))
+
+better:
+-since we are only concerned with positive numbers, remove 
+ all numbers <= 0
+-this way every valid number has an index corresponding to 
+ number - 1
+-remove all numbers that wouldn't fit in the array using
+ this rule
+-to "remove" numbers, replace them with float('inf') or some
+ other appropriately large number
+-the problem is now conceptually the same as 448
+-iterate through the array, if the value isn't float('inf')
+ and the corresponding index isn't already negative, negate
+ corresponding index
+-when doing this, index the array via the value's abs(),
+ since it could already have been negated by a different index
+-iterate once more, the first positive value's index + 1 is the
+ first missing number
+-if loop terminates, solution is len(arr) + 1
+-O(N)

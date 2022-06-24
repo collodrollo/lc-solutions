@@ -1,0 +1,24 @@
+naive:
+-nested loop, return nums[i] when nums[i] == nums[j]
+-O(N^2)
+
+better:
+-keep a set of visited nums
+-when a new num is already in the set, return that num
+-O(N)
+
+best:
+-notice that if you treat the values in the array as linked list node pointers,
+ the duplicates will form a cycle
+-this is guaranteed since array is of size n + 1 and contains unique values
+ from 1..N with just one repeat
+-since 1 <= nums[i], index 0 can be used as head. Otherwise a cycle could be 
+ found at nums[0], even though there would only be one of that number
+-proceed with Floyd's cycle detection algo
+-make sure that tortoise and hare are initialized to head.next and head.next.next,
+ nums[0] and nums[nums[0]] respectively
+-advance tortoise once and hare twice until the two indices meet
+-reset tortoise to 0 (the equivalent of head, *NOT HEAD.NEXT, AS DONE IN INITIALIZATION*)
+-advance tortoise and hare once each until the indices meet once again
+-tortoise now contains the duplicate number
+-O(N)

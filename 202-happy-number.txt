@@ -1,0 +1,9 @@
+-floyd's cycle detection
+-create a function that sums up the squares
+ of the number's digits
+-this will serve as the next pointer of our "linked list"
+-initialize slow to f(num), initialize fast to f(f(num))
+-loop until fast == 1 or slow == fast
+-if fast == 1, no cycle, number is happy, return True
+-otherwise, return False
+-O(N)

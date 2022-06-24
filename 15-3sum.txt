@@ -1,0 +1,31 @@
+naive:
+-find all triplets
+-add all permutations of each triplet to seen set to avoid repeats
+-add each unique triplet to array
+-O(N^3)
+
+better:
+-sort array
+-keep two pointers representing first two items of the triplet
+-initialize second to first + 1
+-since repeat combinations aren't allowed, when advancing any of 
+ the pointers, advance until a new number is reached
+-problem is now modified 2 sum, target is (0 - arr[i] + arr[j]))
+-binary search the rest of the array beyond second pointer for target
+-if exists, add triplet, advance accordingly
+-O(N^2 * log(N))
+
+best:
+-sort array
+-advance first pointer normally, similar to previous solution, passing
+ by repeats
+-initialize two other pointers representing second and third in the
+ triplet
+-intitialize second to first + 1 and third to len(arr) - 1
+-advance these in an inner loop
+-if the current sum < 0, advance left pointer
+-if the current sum > 0, decrement right pointer
+-otherwise, a valid triplet has been found
+-more triplets can be found in this iteration, so advance second and third
+ until new values are reached and continue inner loop
+-O(N^2)

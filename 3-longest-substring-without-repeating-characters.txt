@@ -1,0 +1,6 @@
+-initialize set to keep track of seen characters -- O(1) since 26 characters
+-initialize longest to 0
+-intialize left pointer to 0
+-advance right pointer, bring in left pointer until new character to add exists in set
+-constantly update longest 
+-O(N)

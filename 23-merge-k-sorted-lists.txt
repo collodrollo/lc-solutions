@@ -1,0 +1,2 @@
+-add all nodes to heap, chain them in order
+O(N * lg(N))

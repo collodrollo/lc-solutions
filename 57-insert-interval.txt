@@ -1,0 +1,5 @@
+-since array is already sorted, can use binary search to
+ find new interval's insertion index. Can also do linearly
+-insert new interval at said index using array.insert
+-merge interval as you would normally (problem 56)
+-O(N)

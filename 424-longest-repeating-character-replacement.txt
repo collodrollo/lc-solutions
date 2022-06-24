@@ -1,0 +1,7 @@
+-note that the question boils down to "what is the longest string you can have such that
+ the number of characters other than the single most frequent is <= k"
+-sliding window
+-keep a dictionary count of all characters -- O(1) since only 26 characters
+-if all non most-frequent characters are <= k, update max length (r - l + 1 - max(counts.values()) <= k)
+-otherwise, advance the window (do not shrink)
+-O(N)

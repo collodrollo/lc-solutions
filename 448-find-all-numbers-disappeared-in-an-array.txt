@@ -1,0 +1,25 @@
+normal:
+-since array is of length n and can only contain
+ numbers from 1..n, every unique number has a 
+ corresponding index it can be inserted in
+-for each index, swap until the number in the
+ current index already exists at destination
+ index
+-be careful with python's swapping shortcut, 
+ if number at index is manipulated before the
+ swap is complete, confusing problems can arise
+-missing numbers are at the indices where incorrect
+ number resides
+-O(N)
+
+much fancier:
+-go through array, mark every number's corresponding
+ index as negative
+-the remaining positive indices correspond to the 
+ missing numbers
+-when checking for and assigning negativity, use the
+ absolute value of the current number since it could
+ have been visited by another number earlier
+-return the numbers corresponding the the indices
+ that remain positive
+-O(N)

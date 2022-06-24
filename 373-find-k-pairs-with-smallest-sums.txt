@@ -1,0 +1,32 @@
+brute force:
+-find all pairs, sort by sum, return first K pairs
+-O(N*M)
+
+worse but sometimes better brute force:
+-initialize an array parallel to one of the two arrays with zeroes
+-alternatively use dictionary with keys as indices of one of the two arrays, default value zero
+-the values will correspond to the next valid index in the second array with which 
+ the current index of the first array can be paired with
+-keep track of local minimum and its index, increment the appropriate value in the parallel array
+-do this K times
+-O(K*N)
+
+
+better:
+-imagine the two arrays and their possible pairs as a table
+-start at top left sum (0, 0)
+-use dijkstra's to proceed to next possible index pairs
+-front of heap will carry next smallest pair, repeat k times
+-O(K * log(K))
+
+
+combo of second and third method:
+-initialize heap with all of the items in one arr paired with first element of the other
+-proceed as in dijkstra, no visited set necessary. This is because there is no chance of repeated node,
+ given that each one starts at a different place and the way it advances is by incrementing arr2 index
+-each heap entry will be (sum, num1, num2, i), with i being the next valid index of arr2 the item can be paired with
+-i is incremented every time a node is processed until it reaches the end of arr2
+-front of the heap will always be the next smallest pair
+-repeat min(K, N * M) times
+-O(K * log(K))
+

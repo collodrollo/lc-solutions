@@ -1,0 +1,12 @@
+Modified Dijkstra:
+-shortest path with max K steps
+-cannot directly modify dijkstra's and only consider steps within K because visited set prevents revisits
+-revisits are necessary beacuse visited node may have traveled too many steps already to cointinue onto optimal path
+-instead, only revisit a node if it takes fewer steps to get there vs previous
+-return first match
+-O( K * E * lg(E))
+
+Bellman Ford:
+-iteratively increment min path to all nodes K times
+-if path to destination isn't infinity, it is the answer
+-O(K * N)

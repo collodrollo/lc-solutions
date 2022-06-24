@@ -1,0 +1,11 @@
+-floyd's cycle detection
+-if head or head.next are None, return None
+-initialize slow to head.next, fast to head.next.next
+-loop until fast or fast.next don't exist or until slow == fast
+-advance slow once, advance head twice
+-if loop terminates and they don't equal each other,
+ no cycle, return None
+-otherwise, reset slow to head and increment both 
+ pointers by one until they equal each other
+-this is the entry point to the cycle
+-O(N)

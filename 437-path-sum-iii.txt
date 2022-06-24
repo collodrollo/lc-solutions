@@ -1,0 +1,25 @@
+Brute force
+------------
+-For every node, dfs the entire tree and count up all the sums that match target
+-O(N^2) if tree not guaranteed to be balanced
+-O(NlgN) if balance guaranteed
+
+
+Memoization/two-sum variant
+----------------------------
+-keep track of the root to current node sum throughout the dfs
+-check what value needs to be subtracted from running total in order to achieve target
+-if that sum has been encountered (i.e. has been memoized), add the number of times it 
+ has appeared to total matches
+-O(N)
+
+NOTES
+------
+-Make sure to only add to memo after analysis has been done -- current node can't be 
+ used in the memo check.
+-Initialize memo with {0: 1}, to account for the case where the current sum matches the target
+ (i.e. current_sum - target_val == 0, but 0 doesn't exist in the memo)
+-Make sure to subtract current sum from memo when backtracking
+
+
+https://leetcode.com/problems/path-sum-iii/

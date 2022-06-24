@@ -1,0 +1,25 @@
+naive:
+-set new_head to None
+-loop through the linked list
+-set new_head equal to a new node with the linked
+ list's current value as the node's value and the
+ stored new_head as its next node
+-return new_head
+-O(N) time, O(N) space
+
+
+best:
+-if head is None, return head
+-intialize prev to None
+-remember next node to continue linked list
+-set head.next to prev
+-set prev to head
+-set head to stored next
+-loop while head.next exists, stopping right before
+ we can set head to None
+-if we loop while head is not None, head ends up
+ being None rather than a node and we lose our
+ pointer to the reversed list
+-when loop terminates, finally set head.next to
+ prev
+-O(N) time, O(1) space

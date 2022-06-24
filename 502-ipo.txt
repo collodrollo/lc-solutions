@@ -1,0 +1,11 @@
+-problem: find the most profitable affordable project given current capital, greedily.
+ do this for at most k projects
+-sort pairs by project cost
+-loop k times, add all additional affordable projects to max heap each loop.
+ loop over sorted array will be O(N) because elements aren't repeatedly added.
+ previously added items will remain in heap because capital only increases.
+-if heap is populated, the front holds the best project at the time, otherwise return
+
+
+O(Nlg(N)) time
+O(N) space

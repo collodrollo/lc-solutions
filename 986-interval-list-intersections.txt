@@ -1,0 +1,11 @@
+-initialize intersection array
+-it's important that intervals are sorted and disconnected
+-first solve how to determine intersection from two intervals
+-now problem is similar to merging two sorted lists
+-issue is how to decide when to advance each pointer
+-solution is to keep the pointer with the interval that
+ still has more to offer
+-in this case that would be the interval that ends the latest
+-advance the pointer that ends earliest
+-work finished when loop terminates, return intersection array
+-O(N)

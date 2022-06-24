@@ -1,0 +1,5 @@
+-sliding window
+-keep count of zeroes
+-if zero count exceeds k, advance window
+-otherwise update max window size
+-O(N)

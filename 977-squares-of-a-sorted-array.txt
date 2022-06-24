@@ -1,0 +1,21 @@
+naive:
+-square ever element of the array, sort
+-O(N * log(N))
+
+almost perfect:
+-keep track of zero index (or first positive number)
+-fastest way to do this is bisect_left(arr, 0)
+-square elements
+-merge two sorted arrays into new array
+-left pointer will be zero index - 1, right pointer will be zero index
+-O(N)
+
+best:
+-don't have to start with minimum values and append in order
+-square elements
+-start with largest elements on either end and converge
+-add greater elements to new array
+-reverse when finished (to avoid reversing can just appendleft to deque instead)
+-this is better because instead of reaching the end of one side of
+ the array and terminating, you converge until every value is covered
+-O(N)

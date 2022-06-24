@@ -1,0 +1,10 @@
+naive:
+-most obvious, count, sort or use heap, take top k
+-O(N * log(N))
+
+better:
+-set up an array of length nums initialized with empty arrays
+-count up items, add elements to corresponding count index
+-loop backwards until k elements have been covered
+
+https://leetcode.com/problems/top-k-frequent-elements/

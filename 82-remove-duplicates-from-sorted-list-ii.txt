@@ -1,0 +1,6 @@
+-possible for front of list to be deleted, so header node required
+-prev node, cur node
+-if cur == cur.next, advance cur until new value reached (comparing to prev.next.val in loop)
+-set prev.next to new cur
+-if that condition is triggered, no need to advance cur again
+-otherwise set prev to cur and advance cur

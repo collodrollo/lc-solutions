@@ -1,0 +1,12 @@
+Main idea:
+-keep two heaps the same size
+-lazy delete items that fall out of window (remove out of range items when they
+ get to front of heaps)
+
+-set up heaps by adding all to right (min heap) and then sending k // 2 to left
+-each iteration thereafter add to right (add to left first to ensure proper transfer)
+-if (num[i - k], i-k) is less than front of right, then it belongs to left heap and 
+ should be replaced by sending front of right over in order to maintain size
+
+O(Nlg(N))
+O(N) space

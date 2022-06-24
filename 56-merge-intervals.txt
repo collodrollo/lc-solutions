@@ -1,0 +1,26 @@
+new array
+-sort intervals to simplify the problem
+-start times in ascending order makes it easy
+-keep a running interval with start and end time,
+ updating as it absorbs new intervals
+-initialize start and end to the first interval since
+ interval array has to be populated
+-loop through and update the end if the next interval
+ starts with a number within the running interval
+-when an interval outside running interval is encountered,
+ add running interval to list, update running interval 
+ with new start and end
+-after loop done, add the final calculated interval to
+ new array
+-O(N * log(N))
+
+in place
+-same as previous solution, but use two pointers
+-keep first pointer on current running interval 
+-use second pointer to advance and update running
+ interval with new intervals
+-advance first pointer and replace the item it points
+ to with the new interval that the second pointer
+ has encountered and repeat process
+-pop off all items after first pointer
+-O(N * log(N))

@@ -1,0 +1,12 @@
+naive:
+-count it all up, sort the pairs, return top k
+-O(N * log(N)) <-- assuming O(1) individual comparison
+
+better:
+-count words
+-add each word to frequencies dict, where key is the
+ count and val is a list of words with that frequency
+-iterate backwards from length of words list (len(words list)
+ is max frequency, 1 is min), sort each entry as needed,
+ stop when k items have been processed
+-O(N * log(K)) <-- assuming O(1) individual comparison

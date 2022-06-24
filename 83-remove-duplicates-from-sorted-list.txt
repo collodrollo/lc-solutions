@@ -1,0 +1,8 @@
+-set prev to head and cur to head.next
+-outer loop advances cur once each iteration
+-inner loop advances cur until it doesn't equal prev
+-set prev.next to cur
+-set prev to cur
+-advance cur if not none
+-return head
+-O(N)

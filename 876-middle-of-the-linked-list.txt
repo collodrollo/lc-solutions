@@ -1,0 +1,11 @@
+naive:
+-count nodes with one pass
+-second pass, advance (count // 2) times
+-return node
+-O(N)
+
+one pass:
+-initialize slow and fast pointers to head
+-advance slow once and fast twice
+-when fast can no longer advance twice, return slow
+-O(N)

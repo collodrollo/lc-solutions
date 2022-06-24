@@ -1,0 +1,4 @@
+-loop, advance right pointer each iteration
+-advance left pointer so long as it always satisfies the condition
+-update size if condition is met
+-O(N)

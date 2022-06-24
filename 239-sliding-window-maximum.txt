@@ -1,0 +1,18 @@
+naive:
+-keep deque of size k, advance, constantly adding current max (using max()) to array
+-O(N * K)
+
+better:
+-keep max heap of size k with tuples of (-num, i) 
+-if front of heap contains an i that's out of range, pop it before recording the current max
+-O(N * lg(K))
+
+best:
+-no funny tricks with adding, add every item to deque
+-represent nums with their indices
+-maintain descending order in a deque of max k length
+-when adding a new number, pop off every item at the end
+ of deque that less than or equal to it
+-popleft items that fall out of the window ending at i
+-current window's max will be the first item in the deque at all times
+-O(N)

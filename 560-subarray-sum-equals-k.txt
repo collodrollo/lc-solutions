@@ -1,0 +1,11 @@
+-negative numbers make the problem tricky, regular sliding window won't do the trick
+ since sum isn't strictly increasing as you advance in the array
+-keep a running total of the array elements, each iteration representing the total
+ sum from position 0 to i, each iteration adding to a counting dict
+-this is useful since subtracting sums calculated in this manner yields the sum
+ of a particular range
+-if the current running total is equal to target sum, increase count by 1
+-if a total in the dict exists such that current_total - total == target,
+ update count accordingly (two sum)
+-add current running total to counting dict
+-O(N)

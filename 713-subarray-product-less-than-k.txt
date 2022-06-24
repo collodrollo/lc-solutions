@@ -1,0 +1,22 @@
+naive
+-slide a window of size 1 to len(arr)
+-each iteration collect all window products that
+ are less than k
+-separate function that takes window size and returns
+ number of valid products is easiest
+-add up the lengths of all returned arrays
+-inclusive window always easiest
+-O(N^2)
+
+best:
+-keep a sliding window of varying size
+-expands until k is reached, then shrinks
+-add the length of every valid window to counter
+-this works because with each additional item added to
+ the window, the number of newly introduced subarrays
+ is the window size. Since this starts from base window 
+ size one and gradually increases, all elements are
+ accounted for
+-the number of subarrays == number of current subarrays + 
+ number of additional subarrays created by adding an element
+-O(N)

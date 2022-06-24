@@ -1,0 +1,8 @@
+-floyd's cycle detection
+-initialize slow to head.next
+-initialize fast to head.next.next (if exists)
+-advance fast twice (if exists) and slow once until
+ either fast is None or slow == fast
+-if slow == fast, there is a cycle, return True
+-if not there is no cycle, return False
+-O(N)

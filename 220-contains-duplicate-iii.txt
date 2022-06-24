@@ -1,0 +1,40 @@
+naive:
+-loop through all unique pairs
+-if abs(i - j) <= k and abs(nums[i] - nums[j]) <= t, return True
+-return False outside loop
+-O(N^2)
+
+slightly better naive:
+-sliding window of width k
+-find all unique pairs with each iteration, identical to previous
+ solution
+-window can be huge though, so worst case still slow
+-O(N + K^2)
+
+best:
+-numbers have to have absolute difference <= t, meaning lowest &
+ highest numbers just have to be max t spaces apart on number line
+-numbers are contained withing a window of size k
+-normally just 2 sum, but in this case we are looking for a range
+ of numbers, which can be gigantic
+-instead of iterating through possible solutions for each value one
+ by one, hash every value using (val // t). This compresses a
+ potentially wide range of relevant numbers into a single value
+-the value of each key will be the actual value of the compressed item
+-if there is a match for the compressed value in the dictionary,
+ return True. 
+-since the range of possible values can extend outside of the 
+ calculated compressed range, compressed_val + 1 and - 1 also have
+ to be checked. 
+-for example, t = 3. Value 2 can be compressed into 2 // 3 == 0 and will yield 
+ a solution for any other number that is compressed into 0. However, the range
+ of solutions can extend 3 below and 3 above 2. This means 5, compressed into
+ 1, as well as -1, compressed into -1, are also valid solutions. 
+-for the possibilities that extend into other compressed values, the differences
+ must be checked manually using the values that the compressed key map to, since
+ the ranges can include invalid values (e.g. -3 // 3 = -1, for the previous
+ example)
+-Only one value needs to be stored since an overwriting situation would yield
+ a solution
+-delete compressed values that fall out of the window
+-O(N)

@@ -1,0 +1,22 @@
+naive:
+-while loop through, insert an additional zero every time a zero is encountered
+-don't forget to increment twice when a zero is inserted to avoid infinite loop
+-pop off end of arr until length equals original arr
+-O(N^2)
+
+best:
+-count zeros, stop when there wouldn't be room for another insert
+-record index of final added zero
+-loop backwards, replace item at index i with item at (i - zeros)
+-if item hapens to be a zero and (i - zeros) <= index of final added zero,
+ replace item at i - 1 with another zero, decrement zero count, decrement i
+ to account for duplicated zero
+-O(N)
+
+best-simpler:
+-count all zeros
+-loop backwards
+-if zero is encountered, decrement
+-if i + zeros < len(arr), replace arr[i + zeros] with arr[i]
+-if arr[i] == 0 and i + zeros + 1 < len(arr), replace arr[i + zeros + 1] with 0
+-O(N)

@@ -1,0 +1,8 @@
+-intialize max_fruit to zero
+-initialize empty defaultdict(int) to keep track of the collected fruit
+-initialize left pointer to zero, move right pointer forward with iteration
+-when there are more than 2 types of fruit in the dict, advance left
+ pointer and decrement until one fruit hits 0
+-when a fruit hits zero, delete it from the dict to bring its length down to 2
+-constantly update max fruit with (right - left + 1) or sum(dict_name.values())
+-O(N)
