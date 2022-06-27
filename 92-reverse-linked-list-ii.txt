@@ -1,0 +1,10 @@
+-one pass
+-keep a header, advance another pointer, 'prev',
+ until just before the specified left 
+-label the next node 'tail', as this is the node
+ that will end up at the very end of the list
+ section after reversal is complete
+-insert the node directly following 'tail' in front
+ of 'prev' until reversal is complete
+-return header.next
+-O(N) time, O(1) space
